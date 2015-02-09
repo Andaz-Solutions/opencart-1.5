@@ -4,7 +4,7 @@ class ControllerPaymentAndaz extends Controller {
 
 	public function index() {
 		$this->language->load('payment/andaz');
-        $this->load->model('payment/andaz');
+     //   $this->load->model('payment/andaz');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 		
@@ -202,7 +202,7 @@ class ControllerPaymentAndaz extends Controller {
 		}	
 	}
 
-    public function install() {
+/*    public function install() {
         $this->load->model('payment/andaz');
         $this->load->model('setting/setting');
         $this->model_payment_andaz->install();
@@ -213,5 +213,6 @@ class ControllerPaymentAndaz extends Controller {
         $this->load->model('payment/andaz');
         $this->model_payment_andaz->uninstall();
     }
+*/
 }
 ?>
