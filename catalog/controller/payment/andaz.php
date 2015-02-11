@@ -65,7 +65,7 @@ class ControllerPaymentAndaz extends Controller
         $data['billing_city'] = html_entity_decode($order_info['payment_city'], ENT_QUOTES, 'UTF-8');
         $data['billing_state'] = html_entity_decode($order_info['payment_zone'], ENT_QUOTES, 'UTF-8');
         $data['billing_postal_code'] = html_entity_decode($order_info['payment_postcode'], ENT_QUOTES, 'UTF-8');
-        $data['billing__country'] = html_entity_decode($order_info['payment_country'], ENT_QUOTES, 'UTF-8');
+        $data['billing_country'] = html_entity_decode($order_info['payment_iso_code_2'] , ENT_QUOTES, 'UTF-8');
 
         // Birthday
         //$data['billing_date_of_birth'] = html_entity_decode($order_info['payment_date_of_birth'], ENT_QUOTES, 'UTF-8'); // Tie it to the table.
@@ -92,7 +92,7 @@ class ControllerPaymentAndaz extends Controller
         $data['shipping_city'] = html_entity_decode($order_info['shipping_city'], ENT_QUOTES, 'UTF-8');
         $data['shipping_state'] = html_entity_decode($order_info['shipping_zone'], ENT_QUOTES, 'UTF-8');
         $data['shipping_postal_code'] = html_entity_decode($order_info['shipping_postcode'], ENT_QUOTES, 'UTF-8');
-        $data['shipping_country'] = html_entity_decode($order_info['shipping_country'], ENT_QUOTES, 'UTF-8');
+        $data['shipping_country'] = html_entity_decode($order_info['shipping_iso_code_2'] , ENT_QUOTES, 'UTF-8');
         $data['pass_through'] = 'order_id:' + $this->session->data['order_id'];
 
         $curl = curl_init($url);
