@@ -60,12 +60,12 @@
                     <tr>
                         <td><?php echo $entry_transaction; ?></td>
                         <td><select name="andaz_method">
-                                <?php if (!$andaz_method == 'authorize') { ?>
+                                <?php if ($andaz_method == 'authorize') { ?>
                                 <option value="authorize" selected="selected"><?php echo $text_authorization; ?></option>
                                 <?php } else { ?>
                                 <option value="authorize"><?php echo $text_authorization; ?></option>
                                 <?php } ?>
-                                <?php if ($andaz_method) { ?>
+                                <?php if ($andaz_method == 'capture') { ?>
                                 <option value="capture" selected="selected"><?php echo $text_sale; ?></option>
                                 <?php } else { ?>
                                 <option value="capture"><?php echo $text_sale; ?></option>
