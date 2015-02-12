@@ -63,7 +63,7 @@ class ControllerPaymentAndaz extends Controller
         $data['billing_last_name'] = html_entity_decode($order_info['payment_lastname'], ENT_QUOTES, 'UTF-8');
         $data['billing_address_line_1'] = html_entity_decode($order_info['payment_address_1'], ENT_QUOTES, 'UTF-8');
         $data['billing_city'] = html_entity_decode($order_info['payment_city'], ENT_QUOTES, 'UTF-8');
-        $data['billing_state'] = html_entity_decode($order_info['payment_zone'], ENT_QUOTES, 'UTF-8');
+        $data['billing_state'] = html_entity_decode($order_info['payment_zone_code'], ENT_QUOTES, 'UTF-8');
         $data['billing_postal_code'] = html_entity_decode($order_info['payment_postcode'], ENT_QUOTES, 'UTF-8');
         $data['billing_country'] = html_entity_decode($order_info['payment_iso_code_2'] , ENT_QUOTES, 'UTF-8');
 
@@ -90,7 +90,7 @@ class ControllerPaymentAndaz extends Controller
         $data['shipping_last_name'] = html_entity_decode($order_info['shipping_lastname'], ENT_QUOTES, 'UTF-8');
         $data['shipping_address'] = html_entity_decode($order_info['shipping_address_1'], ENT_QUOTES, 'UTF-8') . ' ' . html_entity_decode($order_info['shipping_address_2'], ENT_QUOTES, 'UTF-8');
         $data['shipping_city'] = html_entity_decode($order_info['shipping_city'], ENT_QUOTES, 'UTF-8');
-        $data['shipping_state'] = html_entity_decode($order_info['shipping_zone'], ENT_QUOTES, 'UTF-8');
+        $data['shipping_state'] = html_entity_decode($order_info['shipping_zone_code'], ENT_QUOTES, 'UTF-8');
         $data['shipping_postal_code'] = html_entity_decode($order_info['shipping_postcode'], ENT_QUOTES, 'UTF-8');
         $data['shipping_country'] = html_entity_decode($order_info['shipping_iso_code_2'] , ENT_QUOTES, 'UTF-8');
         $data['pass_through'] = 'order_id:' + $this->session->data['order_id'];
