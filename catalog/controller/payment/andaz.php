@@ -69,10 +69,11 @@ class ControllerPaymentAndaz extends Controller
 
         // Birthday
         //$data['billing_date_of_birth'] = html_entity_decode($order_info['payment_date_of_birth'], ENT_QUOTES, 'UTF-8'); // Tie it to the table.
-        $data['billing_date_of_birth'] = $this->session->data['date_of_birth'];
+        $data['billing_date_of_birth'] = (isset($this->session->data['date_of_birth'])) ? $this->session->data['date_of_birth'] : "";
+
         // Last four of the social security
         //$data['billing_social_security_number'] = html_entity_decode($order_info['payment_social_security_number'], ENT_QUOTES, 'UTF-8');
-        $data['billing_social_security_number'] = $this->session->data['social_security_number'];
+        $data['billing_social_security_number'] = (isset($this->session->data['social_security_number'])) ? $this->session->data['social_security_number'] : "";
 
         $data['billing_phone_number'] = $order_info['telephone'];
         $data['ip_address'] = $this->request->server['REMOTE_ADDR'];
